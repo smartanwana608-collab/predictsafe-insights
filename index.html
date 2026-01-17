@@ -9,7 +9,7 @@
   <meta name="description" content="Football match insights, live scores, statistics, and community updates. Follow football the smart and simple way." />
   <meta name="robots" content="index, follow" />
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YDXYPEQDP6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -39,7 +39,6 @@
       --light-gray: #f4f6f8;
     }
 
-    /* HEADER */
     header {
       text-align: center;
       padding: 20px;
@@ -49,7 +48,6 @@
       max-width: 160px;
     }
 
-    /* HERO */
     .hero {
       background: linear-gradient(rgba(11,79,193,0.9), rgba(11,79,193,0.9)),
         url("https://images.unsplash.com/photo-1509027572446-af8401acfdc3");
@@ -81,7 +79,6 @@
       display: inline-block;
     }
 
-    /* INFO */
     .info {
       background: var(--light-gray);
       padding: 60px 20px;
@@ -101,7 +98,6 @@
       margin-bottom: 10px;
     }
 
-    /* CTA */
     .cta {
       padding: 60px 20px;
     }
@@ -122,7 +118,7 @@
     .cta-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+      gap: 24px;
     }
 
     .cta-card {
@@ -132,19 +128,16 @@
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      height: 100%;
+      justify-content: space-between;
     }
 
     .cta-content {
-      flex: 1;
       margin-bottom: 18px;
-      text-align: center;
     }
 
     .cta-card h4 {
       color: var(--blue);
       margin-bottom: 8px;
-      font-size: 1.1rem;
     }
 
     .cta-card p {
@@ -152,7 +145,6 @@
       color: #4b5563;
     }
 
-    /* BUTTONS */
     .btn {
       display: block;
       width: 100%;
@@ -162,18 +154,16 @@
       font-weight: bold;
       text-decoration: none;
       font-size: 16px;
+      color: #ffffff;
     }
 
-    .btn-live { background: var(--blue); color: #fff; }
-    .btn-whatsapp { background: #25D366; color: #fff; }
-    .btn-telegram { background: #0088cc; color: #fff; }
-    .btn-chat { background: #111827; color: #fff; }
+    .btn-live { background: var(--blue); }
+    .btn-whatsapp { background: #25D366; }
+    .btn-telegram { background: #0088cc; }
+    .btn-chat { background: #111827; }
 
-    .btn:hover {
-      opacity: 0.95;
-    }
+    .btn:hover { opacity: 0.95; }
 
-    /* FOOTER */
     footer {
       background: #f9fafb;
       padding: 20px;
@@ -204,7 +194,7 @@
 <section class="hero">
   <h1>Football Insights & Live Scores</h1>
   <p>Follow football matches with clarity, live updates, and community access.</p>
-  <a class="hero-btn" href="https://www.predictsafe.com/livescores">View Live Scores</a>
+  <a class="hero-btn btn-live" href="https://www.predictsafe.com/livescores">View Live Scores</a>
 </section>
 
 <section class="info">
@@ -241,9 +231,7 @@
         <h4>WhatsApp Channel</h4>
         <p>Receive football updates directly.</p>
       </div>
-      <a class="btn btn-whatsapp" href="https://whatsapp.com/channel/0029VbBQtMTJENxsdS5nKM2s" target="_blank">
-        Join WhatsApp Channel
-      </a>
+      <a class="btn btn-whatsapp" href="https://whatsapp.com/channel/0029VbBQtMTJENxsdS5nKM2s" target="_blank">Join WhatsApp Channel</a>
     </div>
 
     <div class="cta-card">
@@ -251,9 +239,7 @@
         <h4>Telegram Community</h4>
         <p>Join discussions and conversations.</p>
       </div>
-      <a class="btn btn-telegram" href="https://t.me/predictsafee" target="_blank">
-        Join Telegram Community
-      </a>
+      <a class="btn btn-telegram" href="https://t.me/predictsafee" target="_blank">Join Telegram Community</a>
     </div>
 
     <div class="cta-card">
@@ -261,9 +247,7 @@
         <h4>Chat With Support</h4>
         <p>Talk directly with our team.</p>
       </div>
-      <a class="btn btn-chat" href="https://leenkchat.vercel.app/chat/32466905803" target="_blank">
-        Chat With Support
-      </a>
+      <a class="btn btn-chat" href="https://leenkchat.vercel.app/chat/32466905803" target="_blank">Chat With Support</a>
     </div>
 
   </div>
@@ -273,6 +257,38 @@
   © 2026 PredictSafe. Football insights & community platform.
   <a href="pages/privacy.html">Privacy Policy</a>
 </footer>
+
+<!-- CTA CLICK TRACKING -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    function trackClick(label) {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", {
+          event_category: "engagement",
+          event_label: label
+        });
+      }
+    }
+
+    document.querySelectorAll(".btn-live").forEach(btn =>
+      btn.addEventListener("click", () => trackClick("Live Scores"))
+    );
+
+    document.querySelectorAll(".btn-whatsapp").forEach(btn =>
+      btn.addEventListener("click", () => trackClick("WhatsApp Channel"))
+    );
+
+    document.querySelectorAll(".btn-telegram").forEach(btn =>
+      btn.addEventListener("click", () => trackClick("Telegram Community"))
+    );
+
+    document.querySelectorAll(".btn-chat").forEach(btn =>
+      btn.addEventListener("click", () => trackClick("Chat With Support"))
+    );
+
+  });
+</script>
 
 </body>
 </html>
