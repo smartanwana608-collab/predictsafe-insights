@@ -154,3 +154,66 @@ body {
     font-size: 1.8rem;
   }
 }
+/* ============================= */
+/* CTA BUTTON IMPROVEMENTS */
+/* ============================= */
+
+.cta-item a {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Button Variants */
+.btn-live {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+}
+
+.btn-telegram {
+  background-color: #0088cc;
+  color: #ffffff;
+}
+
+.btn-chat {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+/* Hover & Active States */
+.cta-item a:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.cta-item a:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+/* Improve CTA Card Spacing */
+.cta-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Mobile CTA Optimization */
+@media (max-width: 600px) {
+  .cta-item a {
+    font-size: 16px;
+    padding: 16px;
+  }
+}
