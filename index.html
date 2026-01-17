@@ -11,15 +11,19 @@
 
   <style>
     /* RESET */
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, Helvetica, sans-serif;
       background-color: #ffffff;
       color: #1f2937;
       line-height: 1.6;
     }
 
-    /* BRAND COLORS */
     :root {
       --blue: #0b4fc1;
       --yellow: #f5c518;
@@ -30,7 +34,6 @@
     header {
       text-align: center;
       padding: 20px;
-      background: #ffffff;
     }
 
     header img {
@@ -39,11 +42,8 @@
 
     /* HERO */
     .hero {
-      background: linear-gradient(
-        rgba(11, 79, 193, 0.9),
-        rgba(11, 79, 193, 0.9)
-      ),
-      url("https://images.unsplash.com/photo-1509027572446-af8401acfdc3");
+      background: linear-gradient(rgba(11,79,193,0.9), rgba(11,79,193,0.9)),
+        url("https://images.unsplash.com/photo-1509027572446-af8401acfdc3");
       background-size: cover;
       background-position: center;
       padding: 90px 20px;
@@ -62,18 +62,17 @@
       margin: 0 auto 30px;
     }
 
-    .hero .hero-btn {
+    .hero-btn {
       background: var(--yellow);
       color: #000;
       padding: 16px 32px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 8px;
       display: inline-block;
-      font-size: 16px;
     }
 
-    /* INFO SECTION */
+    /* INFO */
     .info {
       background: var(--light-gray);
       padding: 60px 20px;
@@ -83,7 +82,7 @@
     }
 
     .info-box {
-      background: #ffffff;
+      background: #fff;
       padding: 24px;
       border-radius: 8px;
     }
@@ -93,18 +92,19 @@
       margin-bottom: 10px;
     }
 
-    /* CTA SECTION */
+    /* CTA */
     .cta {
       padding: 60px 20px;
-      text-align: center;
     }
 
     .cta h2 {
+      text-align: center;
       font-size: 2rem;
       margin-bottom: 10px;
     }
 
-    .cta p {
+    .cta > p {
+      text-align: center;
       max-width: 600px;
       margin: 0 auto 40px;
       color: #4b5563;
@@ -118,12 +118,17 @@
 
     .cta-card {
       border: 1px solid #e5e7eb;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 26px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      height: 100%;
+    }
+
+    .cta-content {
+      flex: 1;
+      margin-bottom: 18px;
     }
 
     .cta-card h4 {
@@ -134,7 +139,7 @@
 
     .cta-card p {
       font-size: 0.95rem;
-      margin-bottom: 16px;
+      color: #4b5563;
     }
 
     /* BUTTONS */
@@ -142,32 +147,17 @@
       display: block;
       width: 100%;
       padding: 16px;
+      border-radius: 8px;
       text-align: center;
       font-weight: bold;
-      border-radius: 8px;
       text-decoration: none;
       font-size: 16px;
     }
 
-    .btn-live {
-      background: var(--blue);
-      color: #ffffff;
-    }
-
-    .btn-whatsapp {
-      background: #25D366;
-      color: #ffffff;
-    }
-
-    .btn-telegram {
-      background: #0088cc;
-      color: #ffffff;
-    }
-
-    .btn-chat {
-      background: #111827;
-      color: #ffffff;
-    }
+    .btn-live { background: var(--blue); color: #fff; }
+    .btn-whatsapp { background: #25D366; color: #fff; }
+    .btn-telegram { background: #0088cc; color: #fff; }
+    .btn-chat { background: #111827; color: #fff; }
 
     .btn:hover {
       opacity: 0.95;
@@ -187,7 +177,6 @@
       margin-left: 10px;
     }
 
-    /* MOBILE */
     @media (max-width: 600px) {
       .hero h1 {
         font-size: 1.9rem;
@@ -198,96 +187,82 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="https://res.cloudinary.com/dc9ewt22n/image/upload/v1764974917/PHOTO-2025-11-20-19-08-07_2_ljj8xp.jpg" alt="PredictSafe Logo">
-  </header>
+<header>
+  <img src="https://res.cloudinary.com/dc9ewt22n/image/upload/v1764974917/PHOTO-2025-11-20-19-08-07_2_ljj8xp.jpg" alt="PredictSafe Logo">
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Football Insights & Live Scores</h1>
-    <p>
-      Follow football matches with clarity. Access live scores,
-      structured insights, and community updates in one place.
-    </p>
-    <a class="hero-btn" href="https://www.predictsafe.com/livescores">
-      View Live Scores
-    </a>
-  </section>
+<section class="hero">
+  <h1>Football Insights & Live Scores</h1>
+  <p>Follow football matches with clarity, live updates, and community access.</p>
+  <a class="hero-btn" href="https://www.predictsafe.com/livescores">View Live Scores</a>
+</section>
 
-  <!-- INFO -->
-  <section class="info">
-    <div class="info-box">
-      <h3>Match Insights</h3>
-      <p>
-        Understand team form, match context, and performance trends.
-      </p>
-    </div>
+<section class="info">
+  <div class="info-box">
+    <h3>Match Insights</h3>
+    <p>Understand team form and match context.</p>
+  </div>
+  <div class="info-box">
+    <h3>Statistics & Trends</h3>
+    <p>Track league tables and performance data.</p>
+  </div>
+  <div class="info-box">
+    <h3>Football Community</h3>
+    <p>Connect with fans across our platforms.</p>
+  </div>
+</section>
 
-    <div class="info-box">
-      <h3>Statistics & Trends</h3>
-      <p>
-        Follow league tables, team records, and historical match data.
-      </p>
-    </div>
+<section class="cta">
+  <h2>Connect With PredictSafe</h2>
+  <p>Choose how you want to follow football updates and discussions.</p>
 
-    <div class="info-box">
-      <h3>Football Community</h3>
-      <p>
-        Stay connected with football fans through official channels.
-      </p>
-    </div>
-  </section>
+  <div class="cta-grid">
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Connect With PredictSafe</h2>
-    <p>
-      Choose how you want to follow football updates and discussions.
-    </p>
-
-    <div class="cta-grid">
-
-      <div class="cta-card">
+    <div class="cta-card">
+      <div class="cta-content">
         <h4>Live Scores</h4>
         <p>Follow matches as they happen.</p>
-        <a class="btn btn-live" href="https://www.predictsafe.com/livescores">
-          Open Live Scores
-        </a>
       </div>
-
-      <div class="cta-card">
-        <h4>WhatsApp Channel</h4>
-        <p>Receive football updates directly on WhatsApp.</p>
-        <a class="btn btn-whatsapp" href="https://whatsapp.com/channel/0029VbBQtMTJENxsdS5nKM2s" target="_blank">
-          Join WhatsApp Channel
-        </a>
-      </div>
-
-      <div class="cta-card">
-        <h4>Telegram Community</h4>
-        <p>Join discussions and football conversations.</p>
-        <a class="btn btn-telegram" href="https://t.me/predictsafee" target="_blank">
-          Join Telegram Community
-        </a>
-      </div>
-
-      <div class="cta-card">
-        <h4>Chat With Support</h4>
-        <p>Have questions? Talk directly with our team.</p>
-        <a class="btn btn-chat" href="https://leenkchat.vercel.app/chat/32466905803" target="_blank">
-          Chat With Support
-        </a>
-      </div>
-
+      <a class="btn btn-live" href="https://www.predictsafe.com/livescores">Open Live Scores</a>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 PredictSafe. Football insights & community platform.
-    <a href="pages/privacy.html">Privacy Policy</a>
-  </footer>
+    <div class="cta-card">
+      <div class="cta-content">
+        <h4>WhatsApp Channel</h4>
+        <p>Receive football updates directly.</p>
+      </div>
+      <a class="btn btn-whatsapp" href="https://whatsapp.com/channel/0029VbBQtMTJENxsdS5nKM2s" target="_blank">
+        Join WhatsApp Channel
+      </a>
+    </div>
+
+    <div class="cta-card">
+      <div class="cta-content">
+        <h4>Telegram Community</h4>
+        <p>Join discussions and conversations.</p>
+      </div>
+      <a class="btn btn-telegram" href="https://t.me/predictsafee" target="_blank">
+        Join Telegram Community
+      </a>
+    </div>
+
+    <div class="cta-card">
+      <div class="cta-content">
+        <h4>Chat With Support</h4>
+        <p>Talk directly with our team.</p>
+      </div>
+      <a class="btn btn-chat" href="https://leenkchat.vercel.app/chat/32466905803" target="_blank">
+        Chat With Support
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 PredictSafe. Football insights & community platform.
+  <a href="pages/privacy.html">Privacy Policy</a>
+</footer>
 
 </body>
 </html>
