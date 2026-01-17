@@ -4,94 +4,239 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Football Match Insights & Live Scores | PredictSafe</title>
+  <title>Football Insights & Live Scores | PredictSafe</title>
 
-  <meta name="description" content="Explore football match insights, team form, live scores, and join a growing football community. Stay informed with structured match analysis and updates." />
-
-  <!-- Basic SEO -->
+  <meta name="description" content="Football match insights, live scores, statistics, and community updates. Follow football the smart and simple way." />
   <meta name="robots" content="index, follow" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+      color: #1f2937;
+    }
 
+    /* BRAND COLORS */
+    :root {
+      --blue: #0b4fc1;
+      --yellow: #f5c518;
+      --light-gray: #f4f6f8;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #ffffff;
+    }
+
+    header img {
+      max-width: 160px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(
+        rgba(11, 79, 193, 0.9),
+        rgba(11, 79, 193, 0.9)
+      ),
+      url("https://images.unsplash.com/photo-1509027572446-af8401acfdc3");
+      background-size: cover;
+      background-position: center;
+      padding: 90px 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .hero a {
+      background: var(--yellow);
+      color: #000;
+      padding: 14px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    /* INFO SECTION */
+    .info {
+      background: var(--light-gray);
+      padding: 60px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .info-box {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 8px;
+    }
+
+    .info-box h3 {
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    /* CTA SECTION */
+    .cta {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: #4b5563;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .cta-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 24px;
+      background: #ffffff;
+    }
+
+    .cta-card h4 {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .cta-card a {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--blue);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #f9fafb;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--blue);
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <img 
-      src="https://res.cloudinary.com/dc9ewt22n/image/upload/v1764974917/PHOTO-2025-11-20-19-08-07_2_ljj8xp.jpg" 
-      alt="PredictSafe Logo" 
-      class="logo"
-    />
+  <!-- HEADER -->
+  <header>
+    <img src="https://res.cloudinary.com/dc9ewt22n/image/upload/v1764974917/PHOTO-2025-11-20-19-08-07_2_ljj8xp.jpg" alt="PredictSafe Logo">
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section class="hero">
-    <h1>Football Match Insights & Live Scores</h1>
+    <h1>Football Insights & Live Scores</h1>
     <p>
-      Follow football matches with structured analysis, team form breakdowns,
-      and access to live scores — all in one place.
+      Follow football matches with clarity. Get structured insights,
+      live score access, and community updates in one trusted place.
     </p>
-
-    <a href="https://www.predictsafe.com/livescores" class="primary-btn">
-      View Live Scores
-    </a>
+    <a href="https://www.predictsafe.com/livescores">View Live Scores</a>
   </section>
 
-  <!-- Info Section -->
+  <!-- INFO -->
   <section class="info">
-    <div class="info-card">
-      <h2>Match Analysis</h2>
+    <div class="info-box">
+      <h3>Match Insights</h3>
       <p>
-        Understand team performance, recent form, and key match trends
-        before games kick off.
+        Understand team form, match context, and performance patterns
+        before and during games.
       </p>
     </div>
 
-    <div class="info-card">
-      <h2>Football Statistics</h2>
+    <div class="info-box">
+      <h3>Statistics & Trends</h3>
       <p>
-        Access structured football data including league standings,
-        head-to-head history, and performance insights.
+        Follow league standings, head-to-head history,
+        and structured football data.
       </p>
     </div>
 
-    <div class="info-card">
-      <h2>Community Updates</h2>
+    <div class="info-box">
+      <h3>Football Community</h3>
       <p>
-        Join discussions with other football fans and stay updated
-        on matchday developments.
+        Stay connected with other football fans
+        through our official channels.
       </p>
     </div>
   </section>
 
-  <!-- Community CTA -->
-  <section class="community">
-    <h2>Join Our Football Community</h2>
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Connect With PredictSafe</h2>
     <p>
-      Stay connected with football discussions, updates, and matchday insights
-      across our official community channels.
+      Choose how you want to follow football updates and discussions.
     </p>
 
-    <div class="community-buttons">
-      <a href="https://whatsapp.com/channel/0029VbBQtMTJENxsdS5nKM2s" target="_blank">
-        WhatsApp Channel
-      </a>
+    <div class="cta-grid">
+      <div class="cta-card">
+        <h4>Live Scores</h4>
+        <p>Follow matches as they happen.</p>
+        <a href="https://www.predictsafe.com/livescores">Open Live Scores</a>
+      </div>
 
-      <a href="https://t.me/predictsafee" target="_blank">
-        Telegram Community
-      </a>
+      <div class="cta-card">
+        <h4>WhatsApp Channel</h4>
+        <p>Receive football updates on WhatsApp.</p>
+        <a href="https://whatsapp.com/channel/0029VbBQtMTJENxsdS5nKM2s" target="_blank">Join WhatsApp</a>
+      </div>
 
-      <a href="https://leenkchat.vercel.app/chat/32466905803" target="_blank">
-        Chat With Support
-      </a>
+      <div class="cta-card">
+        <h4>Telegram Community</h4>
+        <p>Join football discussions and updates.</p>
+        <a href="https://t.me/predictsafee" target="_blank">Join Telegram</a>
+      </div>
+
+      <div class="cta-card">
+        <h4>Chat With Support</h4>
+        <p>Have questions? Talk directly with us.</p>
+        <a href="https://leenkchat.vercel.app/chat/32466905803" target="_blank">Start Chat</a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2026 PredictSafe. Football insights & community platform.</p>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 PredictSafe. Football insights & community platform.
     <a href="pages/privacy.html">Privacy Policy</a>
   </footer>
 
